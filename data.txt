@@ -1,3 +1,4 @@
+ID	LETTER	FREQUENCY
 52758	Priority 1	16
 53124	Priority 3	743
 52960	Priority 3	126
