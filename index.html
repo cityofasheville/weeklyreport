@@ -178,7 +178,7 @@
           <div class="col-lg-8">
                 <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> This weeks Workorder Back Log</h3>
                 <hr>
-                <div id="morris-chart-area"></div>
+                <div id="chart"></div>
             
           </div>
         </div><!-- /.row -->
@@ -213,7 +213,7 @@ var yAxis = d3.svg.axis()
     .orient("left")
     .ticks(10, "%");
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#chart").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
