@@ -7,32 +7,31 @@
     <meta name="author" content="">
 
     <title>Dashboard - SB Admin</title>
-<style>
 
-.bar {
-  fill: steelblue;
-}
+    <style type="text/css">
+  
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: black;
+        shape-rendering: crispEdges;
+      }
+      .axis text {
+        font-family: sans-serif;
+        font-size: 11px;
+      }
 
-.bar:hover {
-  fill: brown;
-}
+      rect {
+        -moz-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+      rect:hover{
+        fill: orange;
+      }
 
-.axis {
-  font: 10px sans-serif;
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.x.axis path {
-  display: none;
-}
-
-</style>
+    </style>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 
@@ -63,7 +62,7 @@
                   </div>
                   <div class="col-xs-6 text-right">
                     <p class="announcement-heading">456</p>
-                    <p class="announcement-text">New Mentions!</p>
+                    <p class="announcement-text">New work orders!</p>
                   </div>
                 </div>
               </div>
@@ -71,7 +70,7 @@
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
-                      View Mentions
+                      New Work Orders
                     </div>
                     <div class="col-xs-6 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
@@ -90,7 +89,7 @@
                   </div>
                   <div class="col-xs-6 text-right">
                     <p class="announcement-heading">12</p>
-                    <p class="announcement-text">To-Do Items</p>
+                    <p class="announcement-text">Completed</p>
                   </div>
                 </div>
               </div>
@@ -98,7 +97,7 @@
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
-                      Complete Tasks
+                      Completed Work Orders
                     </div>
                     <div class="col-xs-6 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
@@ -117,7 +116,7 @@
                   </div>
                   <div class="col-xs-6 text-right">
                     <p class="announcement-heading">18</p>
-                    <p class="announcement-text">Crawl Errors</p>
+                    <p class="announcement-text">Overdue Work Orders</p>
                   </div>
                 </div>
               </div>
@@ -125,7 +124,7 @@
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
-                      Fix Issues
+                      Overdue Work Orders
                     </div>
                     <div class="col-xs-6 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
@@ -144,7 +143,7 @@
                   </div>
                   <div class="col-xs-6 text-right">
                     <p class="announcement-heading">56</p>
-                    <p class="announcement-text">New Orders!</p>
+                    <p class="announcement-text"> Completed</p>
                   </div>
                 </div>
               </div>
@@ -152,7 +151,7 @@
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
-                      Complete Orders
+                      Complete Projects
                     </div>
                     <div class="col-xs-6 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
@@ -164,7 +163,7 @@
           </div>
         </div><!-- /.row -->
 
-                <hr>
+             <hr>
 
         <div class="row">
 
@@ -172,16 +171,45 @@
 
             <h2>Work Order <small>Back Log</small></h2>
             <ol class="breadcrumb">
-              <li class="active">Some Descriptive Text</li>
+              <li class="active">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin auctor quam ac tempor. Cras a ante sed libero mollis sodales. Praesent fringilla, neque ut ultrices faucibus, dolor eros ultrices neque, nec bibendum arcu ipsum eget justo.</li>
             </ol>
           </div>            
           <div class="col-lg-8">
                 <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> This weeks Workorder Back Log</h3>
                 <hr>
+                <button type="button" class="btn btn-default" onclick="sortBars()" ><span class="glyphicon glyphicon-sort-by-attributes"> Sort</button>
+                <button type="button" class="btn btn-default" onclick="reset()" ><span class="glyphicon glyphicon-align-left"> Reset</button>
+                <hr>
                 <div id="chart"></div>
             
           </div>
         </div><!-- /.row -->
+     <hr>
+    <div class="container">
+        <div class="row" ><h1>What have we done This week?<small></small></h1> </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <h2>Thing 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin auctor quam ac tempor. Cras a ante sed libero mollis sodales. Praesent fringilla, neque ut ultrices faucibus, dolor eros ultrices neque, nec bibendum arcu ipsum eget justo.</p>
+                <a class="btn btn-default" href="#">More Info</a>
+            </div>
+            <div class="col-lg-3">
+                <h2>Thing 2</h2>
+                <p>Phasellus vestibulum sagittis purus laoreet varius. Pellentesque malesuada malesuada mattis. Aliquam sed porta nisi, eget suscipit dolor. Nam ipsum sapien, rhoncus eu leo eu, ultricies pellentesque tellus.</p>
+                <a class="btn btn-default" href="#">More Info</a>
+            </div>
+            <div class="col-lg-3">
+                <h2>Thing 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin auctor quam ac tempor. Cras a ante sed libero mollis sodales. Praesent fringilla, neque ut ultrices faucibus, dolor eros ultrices neque, nec bibendum arcu ipsum eget justo.</p>
+                <a class="btn btn-default" href="#">More Info</a>
+            </div>
+            <div class="col-lg-3">
+                <h2>Thing 4</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin auctor quam ac tempor. Cras a ante sed libero mollis sodales. Praesent fringilla, neque ut ultrices faucibus, dolor eros ultrices neque, nec bibendum arcu ipsum eget justo.</p>
+                <a class="btn btn-default" href="#">More Info</a>
+            </div>        
+          </div>
+      </div>
 
 
 
@@ -194,67 +222,217 @@
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script>
 
-var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+            var w = 600;
+            var h = 250;
 
-var x = d3.scale.ordinal()
-    .rangeRoundBands([0, width], .1);
+            var dataset = [ 
+              { key: 0, value: 5 },
+              { key: 1, value: 10 },
+              { key: 2, value: 13 },
+              { key: 3, value: 19 },
+              { key: 4, value: 21 },
+              { key: 5, value: 25 },
+              { key: 6, value: 22 },
+              { key: 7, value: 18 },
+              { key: 8, value: 15 },
+              { key: 9, value: 13 },
+              { key: 10, value: 11 },
+              { key: 11, value: 12 },
+              { key: 12, value: 15 },
+              { key: 13, value: 20 },
+              { key: 14, value: 18 },
+              { key: 15, value: 17 },
+              { key: 16, value: 16 },
+              { key: 17, value: 18 },
+              { key: 18, value: 23 },
+              { key: 19, value: 25 } ];
 
-var y = d3.scale.linear()
-    .range([height, 0]);
+            var xScale = d3.scale.ordinal()
+                    .domain(d3.range(dataset.length))
+                    .rangeRoundBands([0, w], 0.05); 
 
-var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("bottom");
+            var yScale = d3.scale.linear()
+                    .domain([0, d3.max(dataset, function(d) {return d.value;})])
+                    .range([0, h]);
 
-var yAxis = d3.svg.axis()
-    .scale(y)
-    .orient("left")
-    .ticks(10, "%");
+            var key = function(d) {
+              return d.key;
+            };
 
-var svg = d3.select("#chart").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            //Create SVG element
+            var svg = d3.select("#chart")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
 
-d3.tsv("data.txt", type, function(error, data) {
-  x.domain(data.map(function(d) { return d.letter; }));
-  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+            //Create bars
+            svg.selectAll("rect")
+               .data(dataset, key)
+               .enter()
+               .append("rect")
+               .attr("x", function(d, i) {
+                return xScale(i);
+               })
+               .attr("y", function(d) {
+                return h - yScale(d.value);
+               })
+               .attr("width", xScale.rangeBand())
+               .attr("height", function(d) {
+                return yScale(d.value);
+               })
+               .attr("fill", function(d) {
+                return "rgb(0, 0, " + (d.value * 10) + ")";
+               })
 
-  svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
+              //Tooltip
+              .on("mouseover", function(d) {
+                //Get this bar's x/y values, then augment for the tooltip
+                var xPosition = parseFloat(d3.select(this).attr("x")) + xScale.rangeBand() / 2;
+                var yPosition = parseFloat(d3.select(this).attr("y")) + 14;
 
-  svg.append("g")
-      .attr("class", "y axis")
-      .call(yAxis)
-    .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Frequency");
+                //Update Tooltip Position & value
+                d3.select("#tooltip")
+                  .style("left", xPosition + "px")
+                  .style("top", yPosition + "px")
+                  .select("#value")
+                  .text(d.value);
+                d3.select("#tooltip").classed("hidden", false)
+              })
+              .on("mouseout", function() {
+                //Remove the tooltip
+                d3.select("#tooltip").classed("hidden", true);
+              })  ;
 
-  svg.selectAll(".bar")
-      .data(data)
-    .enter().append("rect")
-      .attr("class", "bar")
-      .attr("x", function(d) { return x(d.letter); })
-      .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.frequency); })
-      .attr("height", function(d) { return height - y(d.frequency); });
+            //Create labels
+            svg.selectAll("text")
+               .data(dataset, key)
+               .enter()
+               .append("text")
+               .text(function(d) {
+                return d.value;
+               })
+               .attr("text-anchor", "middle")
+               .attr("x", function(d, i) {
+                return xScale(i) + xScale.rangeBand() / 2;
+               })
+               .attr("y", function(d) {
+                return h - yScale(d.value) + 14;
+               })
+               .attr("font-family", "sans-serif") 
+               .attr("font-size", "11px")
+               .attr("fill", "white");
 
-});
+            var sortOrder = false;
+            var sortBars = function () {
+                sortOrder = !sortOrder;
 
-function type(d) {
-  d.frequency = +d.frequency;
-  return d;
-}
+                sortItems = function (a, b) {
+                    if (sortOrder) {
+                        return a.value - b.value;
+                    }
+                    return b.value - a.value;
+                };
 
-</script>
+                svg.selectAll("rect")
+                    .sort(sortItems)
+                    .transition()
+                    .delay(function (d, i) {
+                    return i * 50;
+                })
+                    .duration(1000)
+                    .attr("x", function (d, i) {
+                    return xScale(i);
+                });
+
+                svg.selectAll('text')
+                    .sort(sortItems)
+                    .transition()
+                    .delay(function (d, i) {
+                    return i * 50;
+                })
+                    .duration(1000)
+                    .text(function (d) {
+                    return d.value;
+                })
+                    .attr("text-anchor", "middle")
+                    .attr("x", function (d, i) {
+                    return xScale(i) + xScale.rangeBand() / 2;
+                })
+                    .attr("y", function (d) {
+                    return h - yScale(d.value) + 14;
+                });
+            };
+            // Add the onclick callback to the button
+            d3.select("#sort").on("click", sortBars);
+            d3.select("#reset").on("click", reset);
+            function randomSort() {
+
+
+              svg.selectAll("rect")
+                    .sort(sortItems)
+                    .transition()
+                    .delay(function (d, i) {
+                    return i * 50;
+                })
+                    .duration(1000)
+                    .attr("x", function (d, i) {
+                    return xScale(i);
+                });
+
+                svg.selectAll('text')
+                    .sort(sortItems)
+                    .transition()
+                    .delay(function (d, i) {
+                    return i * 50;
+                })
+                    .duration(1000)
+                    .text(function (d) {
+                    return d.value;
+                })
+                    .attr("text-anchor", "middle")
+                    .attr("x", function (d, i) {
+                    return xScale(i) + xScale.rangeBand() / 2;
+                })
+                    .attr("y", function (d) {
+                    return h - yScale(d.value) + 14;
+                });
+            }
+            function reset() {
+              svg.selectAll("rect")
+                .sort(function(a, b){
+                  return a.key - b.key;
+                })
+                .transition()
+                    .delay(function (d, i) {
+                    return i * 50;
+                })
+                    .duration(1000)
+                    .attr("x", function (d, i) {
+                    return xScale(i);
+                });
+
+              svg.selectAll('text')
+                    .sort(function(a, b){
+                  return a.key - b.key;
+                })
+                    .transition()
+                    .delay(function (d, i) {
+                    return i * 50;
+                })
+                    .duration(1000)
+                    .text(function (d) {
+                    return d.value;
+                })
+                    .attr("text-anchor", "middle")
+                    .attr("x", function (d, i) {
+                    return xScale(i) + xScale.rangeBand() / 2;
+                })
+                    .attr("y", function (d) {
+                    return h - yScale(d.value) + 14;
+                });
+            };    
+
+    </script>
     <!-- Page Specific Plugins -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
